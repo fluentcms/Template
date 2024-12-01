@@ -71,4 +71,6 @@ Before running the project, you may need to update some configuration settings i
 This repository currently contains three templates to help you start your project quickly. We will add more templates frequently.
 
 Here is some screenshots of templates:
-TODO 
+![portfolio](/docs/resources/portfolio.png)
+![contact us](/docs/resources/contact-us.png)
+![default](/docs/resources/default.png) 
