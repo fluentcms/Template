@@ -3,31 +3,54 @@ Welcome to the **FluentCMS Base Template** Repository!
 This repository serves as the foundational template for building projects with FluentCMS,
 providing essential configurations, best practices, and fully customizable templates to ...
 
-## Usage
-Steps to Setup and Run the Project
 
-1. **Clone the Repository:**
+## Getting Started
 
-   Start by cloning the repository to your local machine:
-   ```
-    git clone https://github.com/fluentcms/Template
-    cd Template
-   ```
-2. **Restore dependencies:**
+### Prerequisites
 
-   Use the .NET CLI to restore the required dependencies:
-   ```
-    dotnet restore
-   ```
-3. **Run project:**
+- .NET SDK 9.0 or later
 
-   Use the .NET CLI to restore the required dependencies:
+### Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/fluentcms/Template.git
    ```
-    dotnet run
+
+2. **Navigate to the project directory:**
+
+   ```bash
+   cd Template
    ```
-4. **Access the application:**
-   
-   Open your web browser and navigate to: http://localhost:5000
+3. **Configure the Database:**
+
+   FluentCMS supports multiple databases. Configure the desired database by following these steps:
+
+      * **Set the Database in `appsettings.json`:** 
+      Define your database type under `Database` section. For example, to use LiteDB:
+
+         ```json
+         "Database": "LiteDB"
+         ```
+      Available options are: `LiteDb`, `MongoDB`, `SQLite`, `SQLServer`, `MySQL`, `PostgreSQL`
+
+   * **Provide Connection Strings in `appsettings.json`:** 
+      Set your connection string under "ConnectionStrings" in appsettings.json for the desired database:
+
+      ```json
+      "ConnectionStrings": {
+         "DefaultConnection": "Filename=./fluentcms.db"
+      }
+      ```
+
+4. **Run the application:**
+
+   ```bash
+   dotnet run
+   ```
+
+5. **Visit `http://localhost:5000` in your browser.**
 
 Your FluentCMS project is now running! Start exploring and building your Sites.
 
