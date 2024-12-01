@@ -1,7 +1,7 @@
 # FluentCMS Template
 Welcome to the **FluentCMS Base Template** Repository!
 This repository serves as the foundational template for building projects with FluentCMS,
-providing essential configurations, best practices, and fully customizable templates to ...
+providing essential configurations, best practices, and fully customizable templates to kickstart your project and get you up and running quickly.
 
 
 ## Getting Started
