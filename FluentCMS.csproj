@@ -7,28 +7,28 @@
     <Version>0.0.0.0</Version>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="FluentCMS.Web.Api" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Repositories.Caching" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Repositories.EFCore.PostgreSQL" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Repositories.EFCore.Sqlite" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Repositories.EFCore.MySql" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Repositories.EFCore.SqlServer" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Repositories.MongoDB" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Repositories.LiteDb" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Web.UI" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Web.Plugins.TextHTML" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Web.Plugins.Block" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Web.Plugins.ContactUs" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Web.Plugins.RichText" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Web.Plugins.IFrame" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Web.Plugins.ContentViewer" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Web.Plugins.Admin" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Providers.ApiTokenProviders" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Providers.CacheProviders" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Providers.EmailProviders" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Providers.FileStorageProviders" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Providers.MessageBusProviders" Version="0.0.3" />
-    <PackageReference Include="FluentCMS.Providers.TemplateRenderingProviders" Version="0.0.3" />
+    <PackageReference Include="FluentCMS.Web.Api" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Repositories.Caching" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Repositories.EFCore.PostgreSQL" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Repositories.EFCore.Sqlite" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Repositories.EFCore.MySql" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Repositories.EFCore.SqlServer" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Repositories.MongoDB" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Repositories.LiteDb" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Web.UI" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Web.Plugins.TextHTML" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Web.Plugins.Block" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Web.Plugins.ContactUs" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Web.Plugins.RichText" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Web.Plugins.IFrame" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Web.Plugins.ContentViewer" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Web.Plugins.Admin" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Providers.ApiTokenProviders" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Providers.CacheProviders" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Providers.EmailProviders" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Providers.FileStorageProviders" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Providers.MessageBusProviders" Version="0.0.4" />
+    <PackageReference Include="FluentCMS.Providers.TemplateRenderingProviders" Version="0.0.4" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="9.0.0" />
   </ItemGroup>
   <ItemGroup>

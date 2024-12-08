@@ -484,3 +484,6 @@ $RECYCLE.BIN/
 *.swp
 
 files/
+wwwroot/tailwind
+fluentcms.db
+fluentcms-log.db
