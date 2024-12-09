@@ -1,0 +1,20 @@
+<article class="max-w-4xl mx-auto px-4">
+    <section class="mt-4">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">Related Posts</h2>
+        <div class="grid md:grid-cols-2 gap-6">
+            {{for post in Items | array.limit 2 }}
+                <a href="/posts/detail/{{ post.Id }}" class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+                    <img class="w-full h-48 object-cover" src="/files/{{ post.Image }}" alt="Understanding JavaScript Promises">
+                    <div class="p-4">
+                        <h3 class="font-semibold text-gray-900 mb-2">{{ post.Title }}</h3>
+                        <p class="text-gray-600 text-sm mb-4">{{ post.Excerpt }}</p>
+                        <div class="flex items-center">
+                            <img class="h-8 w-8 rounded-full" src="/files/{{ post.AuthorAvatar }}" alt="{{ post.AuthorName }}">
+                            <span class="ml-2 text-sm text-gray-600">{{ post.AuthorName }}</span>
+                        </div>
+                    </div>
+                </a>
+            {{ end }}
+        </div>
+    </section>
+</article>

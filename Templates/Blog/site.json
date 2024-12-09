@@ -1,0 +1,1000 @@
+{
+    "Name": "FluentCMS Blog",
+    "Description": "FluentCMS Blog template",
+    "Layout": "DefaultLayout",
+    "EditLayout": "DefaultLayout",
+    "DetailLayout": "DefaultLayout",
+    "AdminRoles": [ "Administrators" ],
+    "ContributorRoles": [ "Contributors" ],
+    "Roles": [
+        {
+            "Name": "Administrators",
+            "Description": "Default administrators role with full access to the site",
+            "Type": 1
+        },
+        {
+            "Name": "Authenticated Users",
+            "Description": "Default authenticated users role",
+            "Type": 2
+        },
+        {
+            "Name": "Guests",
+            "Description": "Default unauthenticated users role (not logged in users)",
+            "Type": 3
+        },
+        {
+            "Name": "All Users",
+            "Description": "Default all users (authenticated or unauthenticated users)",
+            "Type": 4
+        },
+        {
+            "Name": "Contributors",
+            "Description": "Contributor users to manage pages, plugins, etc.",
+            "Type": 0
+        }
+    ],
+    "Layouts": [
+        {
+            "Name": "DefaultLayout"
+        },
+        {
+            "Name": "AdminLayout"
+        },
+        {
+            "Name": "AuthLayout"
+        }
+    ],
+    "Pages": [
+        {
+            "Title": "Home",
+            "Path": "/",
+            "EditLayout": "EditLayout",
+            "ViewRoles": [ "All Users" ],
+            "Plugins": [
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "001.html"
+                },
+                {
+                    "Definition": "Content List",
+                    "Section": "Container",
+                    "Settings": {
+                        "Template": "002.sbn",
+                        "ContentTypeSlug": "categories"
+                    }
+                },
+                {
+                    "Definition": "Content List",
+                    "Section": "Container",
+                    "Settings": {
+                        "Template": "003.sbn",
+                        "ContentTypeSlug": "posts"
+                    }
+                }
+            ]
+        },
+        {
+            "Title": "All Posts",
+            "Path": "/posts",
+            "ViewRoles": [ "All Users" ],
+            "Plugins": [
+                {
+                    "Definition": "Content List",
+                    "Section": "Container",
+                    "Settings": {
+                        "Template": "posts/001.sbn",
+                        "ContentTypeSlug": "posts"
+                    }
+                }
+            ],
+            "Children": [
+                {
+                    "Title": "Post Details",
+                    "Path": "/detail",
+                    "ViewRoles": [ "All Users" ],
+                    "Plugins": [
+                        {
+                            "Definition": "Content Detail",
+                            "Section": "Main",
+                            "Settings": {
+                                "Template": "posts/detail/001.sbn",
+                                "ContentTypeSlug": "posts"
+                            }
+                        },
+                        {
+                            "Definition": "Content List",
+                            "Section": "Container",
+                            "Settings": {
+                                "Template": "posts/detail/002.sbn",
+                                "ContentTypeSlug": "posts"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Title": "About",
+            "Path": "/About",
+            "EditLayout": "EditLayout",
+            "ViewRoles": [ "All Users" ],
+            "Plugins": [
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "about/001.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "about/002.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "about/003.html"
+                },
+                {
+                    "Definition": "Content List",
+                    "Section": "Container",
+                    "Settings": {
+                        "Template": "about/004.sbn",
+                        "ContentTypeSlug": "authors"
+                    }
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "about/005.html"
+                }
+            ]
+        },
+        {
+            "Title": "Admin",
+            "Path": "/admin",
+            "Layout": "AdminLayout",
+            "EditLayout": "AdminLayout",
+            "AdminRoles": [ "Administrators" ],
+            "ViewRoles": [ "Administrators" ],
+            "Locked": true,
+            "Plugins": [],
+            "Settings": {
+                "Index": "false",
+                "Follow": "false"
+            },
+            "Children": [
+                {
+                    "Title": "Content Type Builder",
+                    "Path": "/content-types",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "ContentType Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Users",
+                    "Path": "/users",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "User Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "File Management",
+                    "Path": "/files",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "File Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Api Tokens",
+                    "Path": "/api-tokens",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Api Token Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Roles",
+                    "Path": "/roles",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Role Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Sites",
+                    "Path": "/sites",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Site Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Plugins",
+                    "Path": "/plugins",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Plugin Definition Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Pages",
+                    "Path": "/pages",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Page Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Blocks",
+                    "Path": "/blocks",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Block Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Layouts",
+                    "Path": "/layouts",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Layout Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "GlobalSettings",
+                    "Path": "/globalsettings",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [ "Administrators" ],
+                    "ViewRoles": [ "Administrators" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Global Settings Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Title": "Authentication",
+            "Path": "/auth",
+            "Children": [
+                {
+                    "Title": "Login",
+                    "Path": "/login",
+                    "Locked": true,
+                    "Layout": "AuthLayout",
+                    "ViewRoles": [ "All Users" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Plugins": [
+                        {
+                            "Definition": "Login",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Logout",
+                    "Path": "/logout",
+                    "ViewRoles": [ "All Users" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Logout",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Register",
+                    "Path": "/register",
+                    "ViewRoles": [ "All Users" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Layout": "AuthLayout",
+                    "Plugins": [
+                        {
+                            "Definition": "Register",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Reset Password",
+                    "Path": "/reset-password",
+                    "ViewRoles": [ "All Users" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Layout": "AuthLayout",
+                    "Plugins": [
+                        {
+                            "Definition": "Reset Password",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Forgot Password",
+                    "Path": "/forgot-password",
+                    "ViewRoles": [ "All Users" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Layout": "AuthLayout",
+                    "Plugins": [
+                        {
+                            "Definition": "Forgot Password",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Profile",
+                    "Path": "/profile",
+                    "ViewRoles": [ "Authenticated Users" ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Profile",
+                            "Section": "Main"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Blocks": [
+        {
+            "Name": "Header",
+            "Category": "Headers",
+            "Description": "Simple Header Block"
+        },
+        {
+            "Name": "Default",
+            "Category": "Hero",
+            "Description": "Default Hero Block"
+        },
+        {
+            "Name": "Visual Image",
+            "Category": "Hero",
+            "Description": "Visual image with heading"
+        },
+        {
+            "Name": "Default",
+            "Description": "Default feature list",
+            "Category": "Feature"
+        },
+        {
+            "Name": "Default",
+            "Description": "Default CTA Block",
+            "Category": "CTA"
+        },
+        {
+            "Name": "With Image",
+            "Description": "CTA With Image",
+            "Category": "CTA"
+        },
+        {
+            "Name": "With Heading",
+            "Description": "CTA With Heading",
+            "Category": "CTA"
+        },
+        {
+            "Name": "Simple",
+            "Category": "Content",
+            "Description": "Content with Heading and description"
+        },
+        {
+            "Name": "With Image",
+            "Category": "Content",
+            "Description": "Content with Image"
+        },
+        {
+            "Name": "Card",
+            "Category": "Teams",
+            "Description": "Teams section with card"
+        },
+        {
+            "Name": "Clean",
+            "Category": "Teams",
+            "Description": "Grid layout clean without cards"
+        },
+        {
+            "Name": "Default",
+            "Category": "Pricing",
+            "Description": "Default pricing with cards"
+        },
+        {
+            "Name": "Default",
+            "Category": "Footer",
+            "Description": "Default footer"
+        },
+        {
+            "Name": "With Sitemap & Social",
+            "Category": "Footer",
+            "Description": "Footer with sitemap and social links"
+        },
+        {
+            "Name": "Default",
+            "Category": "Social Proof",
+            "Description": "Simple statistics"
+        },
+        {
+            "Name": "Card Statistics",
+            "Category": "Social Proof",
+            "Description": "Statistics using cards"
+        },
+        {
+            "Name": "Icon Statistics",
+            "Category": "Social Proof",
+            "Description": "Statistics with icons"
+        },
+        {
+            "Name": "With Gallery",
+            "Category": "Content",
+            "Description": "Content with gallery"
+        },
+        {
+            "Name": "Mobile App",
+            "Category": "CTA",
+            "Description": "description and Download links of mobile app"
+        },
+        {
+            "Name": "Default",
+            "Category": "FAQ",
+            "Description": "Default frequently asked questions block"
+        },
+        {
+            "Name": "Default",
+            "Category": "Testimonials",
+            "Description": "Default Testimonials block"
+        },
+        {
+            "Name": "Cards",
+            "Category": "Testimonials",
+            "Description": "Testimonials in cards"
+        },
+        {
+            "Name": "Default",
+            "Category": "Customer Logos",
+            "Description": "Default customer logos section"
+        },
+        {
+            "Name": "Default",
+            "Category": "Schedule",
+            "Description": "Default schedule section"
+        }
+    ],
+    "ContentTypes": [
+        {
+            "Slug": "categories",
+            "Title": "Categories",
+            "Description": "Categories content type",
+            "Fields": [
+                {
+                    "Name": "Icon",
+                    "Type": "string",
+                    "Label": "Category Icon",
+                    "Description": "Icon representing the category",
+                    "Required": true,
+                    "Settings": {
+                        "Placeholder": "Choose category icon",
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "",
+                        "FormViewOrder": 3,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "StringFieldFormTextArea"
+                    }
+                },
+                {
+                    "Name": "Name",
+                    "Type": "string",
+                    "Label": "Category Name",
+                    "Description": "name of the category",
+                    "Required": true,
+                    "Settings": {
+                        "Placeholder": "Enter category name",
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 1,
+                        "TableViewOrder": 1,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "Count",
+                    "Type": "number",
+                    "Label": "Posts Count",
+                    "Description": "number of posts in the category",
+                    "Required": true,
+                    "Settings": {
+                        "Placeholder": "Enter number of posts in this category",
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "NumberFieldDataTableView",
+                        "FormViewOrder": 2,
+                        "TableViewOrder": 2,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "NumberFieldFormInput"
+                    }
+                }
+                
+            ],
+            "Contents": [
+                {
+                    "Name": "Programming",
+                    "Count": 42,
+                    "Icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide-icon lucide lucide-code h-6 w-6 text-gray-700\"><polyline points=\"16 18 22 12 16 6\"></polyline><polyline points=\"8 6 2 12 8 18\"></polyline></svg>"
+                },
+                {
+                    "Name": "Design",
+                    "Count": 28,
+                    "Icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide-icon lucide lucide-palette h-6 w-6 text-gray-700\"><!----><circle cx=\"13.5\" cy=\"6.5\" r=\".5\" fill=\"currentColor\"></circle><!----><circle cx=\"17.5\" cy=\"10.5\" r=\".5\" fill=\"currentColor\"></circle><!----><circle cx=\"8.5\" cy=\"7.5\" r=\".5\" fill=\"currentColor\"></circle><!----><circle cx=\"6.5\" cy=\"12.5\" r=\".5\" fill=\"currentColor\"></circle><!----><path d=\"M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z\"></path><!----><!----><!----></svg>"
+                },
+                {
+                    "Name": "Development",
+                    "Count": 35,
+                    "Icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide-icon lucide lucide-terminal h-6 w-6 text-gray-700\"> <polyline points=\"4 17 10 11 4 5\"></polyline> <line x1=\"12\" x2=\"20\" y1=\"19\" y2=\"19\"></line> </svg>"
+                },
+                {
+                    "Name": "Tutorials",
+                    "Count": 25,
+                    "Icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide-icon lucide lucide-book-open h-6 w-6 text-gray-700\"> <path d=\"M12 7v14\"></path> <path d=\"M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z\"> </path> </svg>"
+                },
+                {
+                    "Name": "Quick Tips",
+                    "Count": 15,
+                    "Icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide-icon lucide lucide-zap h-6 w-6 text-gray-700\"> <path d=\"M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z\"> </path> </svg>"
+                },
+                {
+                    "Name": "Lifestyle",
+                    "Count": 18,
+                    "Icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide-icon lucide lucide-coffee h-6 w-6 text-gray-700\"> <path d=\"M10 2v2\"></path> <path d=\"M14 2v2\"></path> <path d=\"M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1\"> </path> <path d=\"M6 2v2\"></path> </svg>"
+                },
+                {
+                    "Name": "Resources",
+                    "Count": 22,
+                    "Icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide-icon lucide lucide-package h-6 w-6 text-gray-700\"> <path d=\"M11 21.73a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73z\"> </path> <path d=\"M12 22V12\"></path> <path d=\"m3.3 7 7.703 4.734a2 2 0 0 0 1.994 0L20.7 7\"></path> <path d=\"m7.5 4.27 9 5.15\"></path> </svg></span>"
+                },
+                {
+                    "Name": "Community",
+                    "Count": 12,
+                    "Icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide-icon lucide lucide-users h-6 w-6 text-gray-700\"> <path d=\"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2\"></path> <circle cx=\"9\" cy=\"7\" r=\"4\"></circle> <path d=\"M22 21v-2a4 4 0 0 0-3-3.87\"></path> <path d=\"M16 3.13a4 4 0 0 1 0 7.75\"></path> </svg></span>"
+                }
+            ]
+        },
+        {
+            "Slug": "posts",
+            "Title": "Posts",
+            "Description": "posts content type",
+            "Fields": [
+                {
+                    "Name": "Title",
+                    "Description": "Title of the post",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Title",
+                    "Settings": {
+                        "Placeholder": "Enter post title",
+                        "DataTableColumnOrder": 1,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 1,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "Excerpt",
+                    "Description": "A brief summary of the post",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Excerpt",
+                    "Settings": {
+                        "Placeholder": "Enter a short excerpt",
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 2,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "StringFieldFormTextArea"
+                    }
+                },
+                {
+                    "Name": "Content",
+                    "Description": "content of the post",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Content",
+                    "Settings": {
+                        "Placeholder": "Write content",
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 2,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "StringFieldFormRichText"
+                    }
+                },
+                {
+                    "Name": "Image",
+                    "Description": "Main image of the post",
+                    "Type": "single-file",
+                    "Required": false,
+                    "Label": "Image",
+                    "Settings": {
+                        "Placeholder": "Choose an image",
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "SingleFileFieldDataTableFile",
+                        "FormViewOrder": 3,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "SingleFileFieldFormFilePicker"
+                    }
+                },
+                {
+                    "Name": "Tags",
+                    "Description": "Tags associated with the post",
+                    "Type": "multi-select",
+                    "Required": false,
+                    "Label": "Tags",
+                    "Settings": {
+                        "Placeholder": "Select tags",
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "MultiSelectFieldDataTableBadges",
+                        "FormViewOrder": 4,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "MultiSelectFieldFormCheckboxes",
+                        "Options": "Svelte\nJavaScript\nCSS\nDesign\nFrontend\nTutorial"
+                    }
+                },
+                {
+                    "Name": "AuthorName",
+                    "Description": "Name of the author",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Author Name",
+                    "Settings": {
+                        "Placeholder": "Enter author name",
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 5,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "AuthorAvatar",
+                    "Description": "Avatar of the author",
+                    "Type": "single-file",
+                    "Required": false,
+                    "Label": "Author Avatar",
+                    "Settings": {
+                        "Placeholder": "Choose an avatar",
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "SingleFileFieldDataTableFile",
+                        "FormViewOrder": 6,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "SingleFileFieldFormFilePicker"
+                    }
+                },
+                {
+                    "Name": "Date",
+                    "Description": "Publication date of the post",
+                    "Type": "datetime",
+                    "Required": true,
+                    "Label": "Published At",
+                    "Settings": {
+                        "Placeholder": "Choose a publication date",
+                        "DataTableColumnOrder": 4,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "DateFieldDataTableView",
+                        "FormViewOrder": 7,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "DateFieldFormDate"
+                    }
+                }
+            ],
+            "Contents": [
+                {
+                    "Title": "Getting Started with Svelte 5",
+                    "Excerpt": "Learn how to build modern web applications with Svelte 5's powerful features and elegant syntax.",
+                    "Content": "<p class=\"text-lg text-gray-700 mb-6\">Svelte 5 introduces groundbreaking features that revolutionize the way we build web applications. In this comprehensive guide, we'll explore the new runes system, enhanced reactivity, and improved performance optimizations that make Svelte 5 stand out from other frameworks.</p><h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Understanding Svelte 5 Runes</h2><p class=\"text-gray-700 mb-6\">Runes represent a fundamental shift in how we handle reactivity in Svelte. They provide a more intuitive and powerful way to manage state and side effects in your applications. Let's dive into the core concepts and best practices.</p><h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Key Features</h2><ul class=\"list-disc list-inside text-gray-700 mb-6\"><li class=\"mb-2\">Enhanced state management with $state rune</li><li class=\"mb-2\">Improved component props handling using $props</li><li class=\"mb-2\">Powerful derived values with $derived</li><li class=\"mb-2\">Side effect management using $effect</li></ul>",
+                    "Image": "/files/contents/blog-1.jpg",
+                    "Tags": ["Svelte", "JavaScript", "Tutorial"],
+                    "AuthorName": "Sarah Johnson",
+                    "AuthorAvatar": "/files/contents/avatar-1.jpeg",
+                    "Date": "Feb 15, 2024"
+                },
+                {
+                    "Title": "Mastering Tailwind CSS",
+                    "Excerpt": "Discover advanced techniques and best practices for building responsive designs with Tailwind CSS.",
+                    "Content": "<p class=\"text-lg text-gray-700 mb-6\">Tailwind CSS has become a cornerstone of modern web design, offering a utility-first approach that accelerates development. This guide delves into advanced techniques, from crafting reusable components to optimizing your styles for production.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Advanced Design Systems</h2>\n<p class=\"text-gray-700 mb-6\">With Tailwind, you can create a scalable design system by customizing the theme, extending utility classes, and leveraging plugins. We’ll explore these concepts and demonstrate how to create a consistent and maintainable UI for large-scale projects.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Optimizing for Performance</h2>\n<p class=\"text-gray-700 mb-6\">Learn how to reduce CSS size using PurgeCSS and Tailwind's built-in optimization features. We'll also discuss strategies for integrating Tailwind with modern frameworks like React, Svelte, and Vue.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Reusable Component Patterns</h2>\n<p class=\"text-gray-700 mb-6\">We’ll cover how to create reusable component patterns, such as modals, navigation bars, and complex forms, to speed up your workflow while maintaining consistency across your project.</p>",
+                    "Image": "/files/contents/blog-2.jpg",
+                    "Tags": ["CSS", "Design", "Frontend"],
+                    "AuthorName": "Mike Wilson",
+                    "AuthorAvatar": "/files/contents/avatar-2.jpeg",
+                    "Date": "Feb 14, 2024"
+                },
+                {
+                    "Title": "Web Performance Optimization",
+                    "Excerpt": "Essential tips and strategies to improve your website's loading speed and overall performance.",
+                    "Content": "<p class=\"text-lg text-gray-700 mb-6\">Web performance is critical for user retention and SEO rankings. This guide focuses on practical strategies for optimizing loading speed, reducing resource usage, and enhancing user experience.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Improving Load Times</h2>\n<p class=\"text-gray-700 mb-6\">We’ll explore techniques like lazy loading, asynchronous resource fetching, and optimizing media assets to achieve faster load times. Tools like Lighthouse and WebPageTest will help you measure and improve performance.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Reducing JavaScript Payload</h2>\n<p class=\"text-gray-700 mb-6\">Learn how to use tree-shaking, code-splitting, and modular imports to reduce JavaScript bundle sizes. We'll also discuss how to minimize dependencies and leverage modern build tools like Vite and Rollup.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Enhancing Accessibility</h2>\n<p class=\"text-gray-700 mb-6\">Performance isn’t just about speed. Accessibility ensures everyone can use your site effectively. We'll share tips for improving ARIA attributes, keyboard navigation, and semantic HTML.</p>",
+                    "Image": "/files/contents/blog-3.jpg",
+                    "Tags": ["Performance", "Web", "Tips"],
+                    "AuthorName": "Alex Chen",
+                    "AuthorAvatar": "/files/contents/avatar-3.jpeg",
+                    "Date": "Feb 13, 2024"
+                },
+                {
+                    "Title": "Modern JavaScript Patterns",
+                    "Excerpt": "Explore modern JavaScript design patterns and architectural approaches for better code organization.",
+                    "Content": "<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Modular Architecture</h2>\n<p class=\"text-gray-700 mb-6\">Modern JavaScript emphasizes modularity, allowing developers to write reusable and isolated components. Learn how to use ES Modules, CommonJS, and tools like Webpack and Rollup to organize your code effectively.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Functional Programming</h2>\n<p class=\"text-gray-700 mb-6\">Functional programming has gained traction in JavaScript due to its clean and predictable nature. We’ll explore concepts like immutability, pure functions, and higher-order functions to improve code quality.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">State Management Patterns</h2>\n<p class=\"text-gray-700 mb-6\">Managing state in complex applications can be challenging. Discover patterns like Flux, Redux, and Zustand, along with modern approaches like hooks and context API in React.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Real-World Scenarios</h2>\n<p class=\"text-gray-700 mb-6\">Through practical examples, we’ll demonstrate how to implement these patterns in real-world projects, such as task management apps and e-commerce platforms.</p>",
+                    "Image": "/files/contents/blog-4.jpg",
+                    "Tags": ["JavaScript", "Architecture", "Development"],
+                    "AuthorName": "Emma Davis",
+                    "AuthorAvatar": "/files/contents/avatar-4.jpeg",
+                    "Date": "Feb 12, 2024"
+                },
+                {
+                    "Title": "UI/UX Design Principles",
+                    "Excerpt": "Learn fundamental principles of user interface and experience design for modern web applications.",
+                    "Content": "<p class=\"text-lg text-gray-700 mb-6\">Creating intuitive and visually appealing user interfaces is critical for user satisfaction. This post explores the core principles of UI/UX design that help you create engaging digital experiences.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">User-Centered Design</h2>\n<p class=\"text-gray-700 mb-6\">Understanding your audience is key. We’ll discuss techniques for creating personas, conducting usability tests, and iterating designs based on user feedback.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Visual Hierarchy</h2>\n<p class=\"text-gray-700 mb-6\">Learn how to use typography, color contrast, and layout to guide users through your application intuitively. We’ll cover tools and frameworks that simplify this process.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Accessibility in Design</h2>\n<p class=\"text-gray-700 mb-6\">Accessible design ensures inclusivity. Explore guidelines like WCAG, and learn how to use tools to validate accessibility and build user-friendly interfaces for all audiences.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Case Studies</h2>\n<p class=\"text-gray-700 mb-6\">We’ll analyze successful examples of UI/UX design in popular apps like Spotify, Airbnb, and Google Maps to highlight practical applications of these principles.</p>\n",
+                    "Image": "/files/contents/blog-5.jpg",
+                    "Tags": ["Design", "UI/UX", "Principles"],
+                    "AuthorName": "David Kim",
+                    "AuthorAvatar": "/files/contents/avatar-5.jpeg",
+                    "Date": "Feb 11, 2024"
+                },
+                {
+                    "Title": "API Development Best Practices",
+                    "Excerpt": "Best practices and guidelines for building robust and scalable APIs for your web applications.",
+                    "Content": "<p class=\"text-lg text-gray-700 mb-6\">APIs are the backbone of modern web applications, enabling seamless communication between services. This guide provides best practices for designing, building, and maintaining APIs that are efficient, secure, and scalable.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Designing Intuitive APIs</h2>\n<p class=\"text-gray-700 mb-6\">An intuitive API design makes it easy for developers to integrate and use your services. We’ll explore techniques like RESTful principles, resource-oriented design, and OpenAPI specifications to create APIs that are clear and predictable.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Ensuring Security</h2>\n<p class=\"text-gray-700 mb-6\">Security is a critical concern in API development. Learn about implementing authentication and authorization methods like OAuth2, rate limiting, and data validation to safeguard your APIs.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Optimizing Performance</h2>\n<p class=\"text-gray-700 mb-6\">Discover ways to optimize API performance using techniques such as caching, pagination, and batching. We’ll also cover strategies for reducing latency and handling high traffic volumes efficiently.</p>\n\n<h2 class=\"text-2xl font-bold text-gray-900 mt-8 mb-4\">Versioning and Documentation</h2>\n<p class=\"text-gray-700 mb-6\">APIs evolve over time, and managing breaking changes is essential. Learn how to implement versioning strategies and create comprehensive documentation using tools like Swagger and Postman.</p>\n",
+                    "Image": "/files/contents/blog-6.jpg",
+                    "Tags": ["API", "Backend", "Development"],
+                    "AuthorName": "Lisa Wang",
+                    "AuthorAvatar": "/files/contents/avatar-6.jpeg",
+                    "Date": "Feb 10, 2024"
+                }
+            ]
+        },
+        {
+            "Slug": "authors",
+            "Title": "Authors",
+            "Description": "authors content type",
+            "Fields": [
+                {
+                    "Name": "Name",
+                    "Description": "Name of the post",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Name",
+                    "Settings": {
+                        "Placeholder": "Enter author name",
+                        "DataTableColumnOrder": 1,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 1,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "Bio",
+                    "Description": "A brief summary about the author",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Bio",
+                    "Settings": {
+                        "Placeholder": "Enter a short paragraph about the author",
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 2,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "StringFieldFormTextArea"
+                    }
+                },
+                {
+                    "Name": "Role",
+                    "Description": "Role of the author",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Name",
+                    "Settings": {
+                        "Placeholder": "Enter author role",
+                        "DataTableColumnOrder": 1,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 1,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "Profile",
+                    "Description": "Main image of the post",
+                    "Type": "single-file",
+                    "Required": false,
+                    "Label": "Profile image",
+                    "Settings": {
+                        "Placeholder": "Choose an image",
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "SingleFileFieldDataTableFile",
+                        "FormViewOrder": 3,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "SingleFileFieldFormFilePicker"
+                    }
+                }
+            ],
+            "Contents": [
+                {
+                    "Name": "Sarah Johnson",
+                    "Profile": "/files/contents/avatar-1.jpeg",
+                    "Title": "Editor in Chief",
+                    "Bio": "Sarah brings 10+ years of tech journalism experience."
+                },
+                {
+                    "Name": "Mike Wilson",
+                    "Profile": "/files/contents/avatar-2.jpeg",
+                    "Title": "Technical Writer",
+                    "Bio": "Full-stack developer turned technical writer."
+                },
+                {
+                    "Name": "Alex Chen",
+                    "Profile": "/files/contents/avatar-3.jpeg",
+                    "Title": "Content Strategist",
+                    "Bio": "Specializes in creating engaging tech content."
+                }
+            ]
+        }
+    ]
+}
