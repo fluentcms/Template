@@ -1,0 +1,26 @@
+<div class="bg-gray-50 py-16">
+  <div class="container mx-auto px-4">
+    <h2 class="text-3xl font-bold text-gray-900 text-center mb-12">
+      Meet Our Team
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {{ for author in Items}}
+
+      <div class="bg-white rounded-xl shadow-sm overflow-hidden">
+        <img
+          class="w-full h-64 object-cover"
+          src="/files/{{ author.Profile }}"
+          alt="{{ author.Name }}"
+        />
+        <div class="p-6">
+          <h3 class="font-semibold text-xl text-gray-900 mb-1">
+            {{ author.Name }}
+          </h3>
+          <p class="text-blue-600 mb-4">{{ author.Role }}</p>
+          <p class="text-gray-600">{{ author.Bio }}</p>
+        </div>
+      </div>
+      {{ end }}
+    </div>
+  </div>
+</div>

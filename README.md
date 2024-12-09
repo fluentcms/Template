@@ -68,9 +68,10 @@ Before running the project, you may need to update some configuration settings i
 
 
 ## Features
-This repository currently contains three templates to help you start your project quickly. We will add more templates frequently.
+This repository currently contains four templates to help you start your project quickly. We will add more templates frequently.
 
 Here is some screenshots of templates:
 ![portfolio](/docs/resources/portfolio.png)
+![blog](/docs/resources/blog.png) 
 ![contact us](/docs/resources/contact-us.png)
 ![default](/docs/resources/default.png) 

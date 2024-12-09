@@ -1,0 +1,32 @@
+<section id="latest">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-900">Latest Posts</h2>
+        <a href="/posts" class="text-blue-600 hover:text-blue-700">View all</a>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{ for post in Items | array.limit 3 }}
+            <a href="/posts/detail/{{ post.Id }}">
+                <article class="bg-white rounded-lg shadow-sm overflow-hidden hover:shadow-md transition">
+                    <img class="w-full h-48 object-cover" src="/files/{{ post.Image }}" alt="{{ post.Title }}">
+                    <div class="p-6">
+                        <div class="flex gap-2 mb-4">
+                            {{ for tag in post.Tags }}
+                                <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Svelte</span>
+                            {{ end }}
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ post.Title }}</h3>
+                        <p class="text-gray-600 mb-4">{{ post.Excerpt }}</p>
+                        <div class="flex items-center">
+                            <img class="h-10 w-10 rounded-full" src="/files/{{ post.AuthorAvatar }}"
+                                alt="{{ post.AuthorName }}">
+                            <div class="ml-3">
+                                <p class="text-sm font-medium text-gray-900">{{ post.AuthorName }}</p>
+                                <p class="text-sm text-gray-500">{{ post.Date }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </a>
+        {{ end }}
+    </div>
+</section>

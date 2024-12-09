@@ -1,0 +1,138 @@
+﻿<meta charset="UTF-8">
+<title>Demo page</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<PageHead fluentcms />
+<link rel="stylesheet" href="/files/css/app.css">
+<link rel="stylesheet" href="/_content/FluentCMS.Web.UI.Components/css/flowbite.min.css" />
+
+<meta name="author" content="FluentCMS">
+<meta name="apple-mobile-web-app-title" content="FluentCMS">
+<meta name="application-name" content="FluentCMS">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="theme-color" content="#2d3250">
+
+<link rel="apple-touch-icon" sizes="180x180" href="/files/images/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/files/images/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/files/images/android-chrome-192x192.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/files/images/favicon-16x16.png">
+<link rel="mask-icon" href="/files/images/safari-pinned-tab.svg" color="#2d3250">
+
+<TailwindStyles fluentcms />
+<script>
+    tailwind.config = {
+        darkMode: ["class"],
+        safelist: ["dark"],
+        theme: {
+            container: {
+                center: true,
+                padding: "2rem",
+                screens: {
+                    "2xl": "1400px",
+                },
+            },
+            extend: {
+                colors: {
+                    border: "hsl(var(--border) / <alpha-value>)",
+                    input: "hsl(var(--input) / <alpha-value>)",
+                    ring: "hsl(var(--ring) / <alpha-value>)",
+                    background: "hsl(var(--background) / <alpha-value>)",
+                    foreground: "hsl(var(--foreground) / <alpha-value>)",
+                    primary: {
+                        DEFAULT: "hsl(var(--primary) / <alpha-value>)",
+                        foreground: "hsl(var(--primary-foreground) / <alpha-value>)",
+                    },
+                    secondary: {
+                        DEFAULT: "hsl(var(--secondary) / <alpha-value>)",
+                        foreground: "hsl(var(--secondary-foreground) / <alpha-value>)",
+                    },
+                    destructive: {
+                        DEFAULT: "hsl(var(--destructive) / <alpha-value>)",
+                        foreground: "hsl(var(--destructive-foreground) / <alpha-value>)",
+                    },
+                    muted: {
+                        DEFAULT: "hsl(var(--muted) / <alpha-value>)",
+                        foreground: "hsl(var(--muted-foreground) / <alpha-value>)",
+                    },
+                    accent: {
+                        DEFAULT: "hsl(var(--accent) / <alpha-value>)",
+                        foreground: "hsl(var(--accent-foreground) / <alpha-value>)",
+                    },
+                    popover: {
+                        DEFAULT: "hsl(var(--popover) / <alpha-value>)",
+                        foreground: "hsl(var(--popover-foreground) / <alpha-value>)",
+                    },
+                    card: {
+                        DEFAULT: "hsl(var(--card) / <alpha-value>)",
+                        foreground: "hsl(var(--card-foreground) / <alpha-value>)",
+                    },
+                },
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                keyframes: {
+                    'accordion-down': {
+                        from: { height: '0' },
+                        to: { height: 'var(--radix-accordion-content-height)' }
+                    },
+                    'accordion-up': {
+                        from: { height: 'var(--radix-accordion-content-height)' },
+                        to: { height: '0' }
+                    },
+                    'caret-blink': {
+                        '0%,70%,100%': { opacity: '1' },
+                        '20%,50%': { opacity: '0' }
+                    }
+                },
+                animation: {
+                    'accordion-down': 'accordion-down 0.2s ease-out',
+                    'accordion-up': 'accordion-up 0.2s ease-out',
+                    'caret-blink': 'caret-blink 1.25s ease-out infinite'
+                }
+            },
+        },
+        plugins: [
+            function ({ addBase, addUtilities, matchUtilities, addComponents, theme }) {
+                // Add base animations
+                addUtilities({
+                    '.animate-fade-up': {
+                        animation: theme('animation.fade-up'),
+                    },
+                    '.animate-fade-down': {
+                        animation: theme('animation.fade-down'),
+                    },
+                    '.animate-slide-up': {
+                        animation: theme('animation.slide-up'),
+                    },
+                    '.animate-slide-down': {
+                        animation: theme('animation.slide-down'),
+                    },
+                })
+
+                // Add animation delay utilities
+                matchUtilities(
+                    {
+                        'animation-delay': (value) => ({
+                            'animation-delay': value,
+                        }),
+                    },
+                    {
+                        values: {
+                            75: '75ms',
+                            100: '100ms',
+                            150: '150ms',
+                            200: '200ms',
+                            300: '300ms',
+                            500: '500ms',
+                            700: '700ms',
+                            1000: '1000ms',
+                        },
+                    },
+                )
+            },
+        ]
+    };
+
+</script>
