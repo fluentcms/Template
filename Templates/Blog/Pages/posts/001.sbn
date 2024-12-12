@@ -1,0 +1,145 @@
+<section class="py-12">
+    <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+            <div class="mb-8">
+                <h1 class="text-3xl font-bold text-gray-900 mb-4">All Posts</h1>
+                <p class="text-gray-600">Explore our collection of articles, tutorials, and insights.</p>
+            </div>
+            <div class="mb-8 space-y-4">
+                <div class="relative">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="lucide-icon lucide lucide-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 h-5 w-5">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                    </svg>
+                    <input type="text" placeholder="Search posts..."
+                        class="w-full pl-10 pr-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:border-blue-500">
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <button class="px-4 py-2 rounded-full text-sm bg-blue-600 text-white">All</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Svelte</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">JavaScript</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Tutorial</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">CSS</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Design</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Frontend</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Performance</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Web</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Tips</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Architecture</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Development</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">UI/UX</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Principles</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">API</button>
+                    <button
+                        class="px-4 py-2 rounded-full text-sm bg-gray-100 text-gray-700 hover:bg-gray-200">Backend</button>
+                </div>
+            </div>
+            <div class="space-y-8">
+                {{ for post in Items }}
+                    <article class="bg-white rounded-xl shadow-sm overflow-hidden hover:shadow-md transition">
+                        <a href="/posts/detail/{{ post.Id }}" class="block md:flex">
+                            <div class="md:w-1/3">
+                                <img class="h-full w-full object-cover" src="/files/{{ post.Image }}"
+                                    alt="Getting Started with Svelte 5">
+                            </div>
+                            <div class="p-6 md:w-2/3">
+                                <div class="flex flex-wrap gap-2 mb-4">
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Svelte</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">JavaScript</span>
+                                    <span class="px-3 py-1 bg-gray-100 text-gray-600 rounded-full text-sm">Tutorial</span>
+                                </div>
+                                <h2 class="text-xl font-semibold text-gray-900 mb-2">{{ post.Title }}</h2>
+                                <p class="text-gray-600 mb-4">
+                                    {{ post.Excerpt }}
+                                </p>
+                                <div class="flex items-center justify-between flex-wrap gap-4">
+                                    <div class="flex items-center">
+                                        <img class="h-10 w-10 rounded-full"
+                                            src="/files/{{ post.AuthorAvatar }}" alt="{{ post.AuthorName }}">
+                                        <div class="ml-3">
+                                            <p class="text-sm font-medium text-gray-900">{{ post.AuthorName }}</p>
+                                            <div class="flex items-center text-sm text-gray-500">
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round"
+                                                    class="lucide-icon lucide lucide-calendar h-4 w-4 mr-1">
+                                                    <path d="M8 2v4"></path>
+                                                    <path d="M16 2v4"></path>
+                                                    <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                                    <path d="M3 10h18"></path>
+                                                </svg> 
+                                                <span>{{ post.Date }}</span>
+                                                <svg xmlns="http://www.w3.org/2000/svg"
+                                                    width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                                    stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    class="lucide-icon lucide lucide-clock h-4 w-4 ml-4 mr-1">
+                                                    <circle cx="12" cy="12" r="10"></circle>
+                                                    <polyline points="12 6 12 12 16 14"></polyline>
+                                                </svg> 
+                                                <span>1 min read</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center space-x-4">
+                                        <button class="text-gray-400 hover:text-blue-600">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide-icon lucide lucide-thumbs-up h-5 w-5">
+                                                <path d="M7 10v12"></path>
+                                                <path
+                                                    d="M15 5.88 14 10h5.83a2 2 0 0 1 1.92 2.56l-2.33 8A2 2 0 0 1 17.5 22H4a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2h2.76a2 2 0 0 0 1.79-1.11L12 2a3.13 3.13 0 0 1 3 3.88Z">
+                                                </path>
+                                            </svg>
+                                        </button> 
+                                        <button class="text-gray-400 hover:text-blue-600">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide-icon lucide lucide-bookmark-plus h-5 w-5">
+                                                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"></path>
+                                                <line x1="12" x2="12" y1="7" y2="13"></line>
+                                                <line x1="15" x2="9" y1="10" y2="10"></line>
+                                            </svg>
+                                        </button>
+                                        <button class="text-gray-400 hover:text-blue-600">
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round"
+                                                class="lucide-icon lucide lucide-share h-5 w-5">
+                                                <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path>
+                                                <polyline points="16 6 12 2 8 6"></polyline>
+                                                <line x1="12" x2="12" y1="2" y2="15"></line>
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                {{ end }}
+            </div>
+        </div>
+    </div>
+</section>
