@@ -1,0 +1,1115 @@
+{
+    "Name": "FluentCMS Administration",
+    "Description": "FluentCMS blank site template",
+    "Layout": "DefaultLayout",
+    "EditLayout": "DefaultLayout",
+    "DetailLayout": "DefaultLayout",
+    "AdminRoles": [
+        "Administrators"
+    ],
+    "ContributorRoles": [
+        "Contributors"
+    ],
+    "Roles": [
+        {
+            "Name": "Administrators",
+            "Description": "Default administrators role with full access to the site",
+            "Type": 1
+        },
+        {
+            "Name": "Authenticated Users",
+            "Description": "Default authenticated users role",
+            "Type": 2
+        },
+        {
+            "Name": "Guests",
+            "Description": "Default unauthenticated users role (not logged in users)",
+            "Type": 3
+        },
+        {
+            "Name": "All Users",
+            "Description": "Default all users (authenticated or unauthenticated users)",
+            "Type": 4
+        },
+        {
+            "Name": "Contributors",
+            "Description": "Contributor users to manage pages, plugins, etc.",
+            "Type": 0
+        }
+    ],
+    "Layouts": [
+        {
+            "Name": "DefaultLayout"
+        },
+        {
+            "Name": "AdminLayout"
+        },
+        {
+            "Name": "AuthLayout"
+        }
+    ],
+    "Pages": [
+        {
+            "Title": "Home",
+            "Path": "/",
+            "EditLayout": "EditLayout",
+            "ViewRoles": [
+                "All Users"
+            ],
+            "Plugins": [
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "001.html"
+                },
+                {
+                    "Definition": "Content List",
+                    "Section": "Main",
+                    "Settings": {
+                        "Template": "002.sbn",
+                        "ContentTypeSlug": "categories"
+                    }
+                },
+                {
+                    "Definition": "Content List",
+                    "Section": "Main",
+                    "Settings": {
+                        "Template": "003.sbn",
+                        "ContentTypeSlug": "jobs"
+                    }
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "004.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "005.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "006.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "007.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "008.html"
+                }
+            ]
+        },
+        {
+            "Title": "Jobs",
+            "Path": "/jobs",
+            "EditLayout": "EditLayout",
+            "ViewRoles": [
+                "All Users"
+            ],
+            "Plugins": [
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "jobs/001.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "jobs/002.html"
+                }
+            ],
+            "Children": [
+                {
+                    "Title": "Job Detail",
+                    "Path": "/detail",
+                    "EditLayout": "EditLayout",
+                    "ViewRoles": [
+                        "All Users"
+                    ],
+                    "Plugins": [
+                        {
+                            "Definition": "TextHTML Plugin",
+                            "Section": "Main",
+                            "ContentPath": "jobs/detail/001.html"
+                        },
+                        {
+                            "Definition": "Content Detail",
+                            "Section": "Main",
+                            "Settings": {
+                                "Template": "jobs/detail/002.sbn",
+                                "ContentTypeSlug": "jobs"
+                            }
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Title": "Blog",
+            "Path": "/blog",
+            "EditLayout": "EditLayout",
+            "ViewRoles": [
+                "All Users"
+            ],
+            "Plugins": [
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "blog/001.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "blog/002.html"
+                }
+            ],
+            "Children": [
+                {
+                    "Title": "Blog Detail",
+                    "Path": "/detail",
+                    "EditLayout": "EditLayout",
+                    "ViewRoles": [
+                        "All Users"
+                    ],
+                    "Plugins": [
+                        {
+                            "Definition": "TextHTML Plugin",
+                            "Section": "Main",
+                            "ContentPath": "blog/detail/001.html"
+                        },
+                        {
+                            "Definition": "TextHTML Plugin",
+                            "Section": "Main",
+                            "ContentPath": "blog/detail/002.html"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Title": "Company Detail",
+            "Path": "/company",
+            "EditLayout": "EditLayout",
+            "ViewRoles": [
+                "All Users"
+            ],
+            "Plugins": [
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "company/001.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "company/002.html"
+                }
+            ]
+        },
+        {
+            "Title": "About Us",
+            "Path": "/about-us",
+            "EditLayout": "EditLayout",
+            "ViewRoles": [
+                "All Users"
+            ],
+            "Plugins": [
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "about-us/001.html"
+                }
+            ]
+        },
+        {
+            "Title": "Contact Us",
+            "Path": "/contact",
+            "EditLayout": "EditLayout",
+            "ViewRoles": [
+                "All Users"
+            ],
+            "Plugins": [
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "contact/001.html"
+                },
+                {
+                    "Definition": "TextHTML Plugin",
+                    "Section": "Main",
+                    "ContentPath": "contact/002.html"
+                }
+            ]
+        },
+        {
+            "Title": "Admin",
+            "Path": "/admin",
+            "Layout": "AdminLayout",
+            "EditLayout": "AdminLayout",
+            "AdminRoles": [
+                "Administrators"
+            ],
+            "ViewRoles": [
+                "Administrators"
+            ],
+            "Locked": true,
+            "Plugins": [],
+            "Settings": {
+                "Index": "false",
+                "Follow": "false"
+            },
+            "Children": [
+                {
+                    "Title": "Content Type Builder",
+                    "Path": "/content-types",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "ContentType Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Users",
+                    "Path": "/users",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "User Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "File Management",
+                    "Path": "/files",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "File Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Api Tokens",
+                    "Path": "/api-tokens",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Api Token Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Roles",
+                    "Path": "/roles",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Role Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Sites",
+                    "Path": "/sites",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Site Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Plugins",
+                    "Path": "/plugins",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Plugin Definition Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Pages",
+                    "Path": "/pages",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Page Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Blocks",
+                    "Path": "/blocks",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Block Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "Layouts",
+                    "Path": "/layouts",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Layout Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                },
+                {
+                    "Title": "GlobalSettings",
+                    "Path": "/globalsettings",
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "AdminRoles": [
+                        "Administrators"
+                    ],
+                    "ViewRoles": [
+                        "Administrators"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Global Settings Management",
+                            "Section": "Main",
+                            "Locked": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "Title": "Authentication",
+            "Path": "/auth",
+            "Children": [
+                {
+                    "Title": "Login",
+                    "Path": "/login",
+                    "Locked": true,
+                    "Layout": "AuthLayout",
+                    "ViewRoles": [
+                        "All Users"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Plugins": [
+                        {
+                            "Definition": "Login",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Logout",
+                    "Path": "/logout",
+                    "ViewRoles": [
+                        "All Users"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Logout",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Register",
+                    "Path": "/register",
+                    "ViewRoles": [
+                        "All Users"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Layout": "AuthLayout",
+                    "Plugins": [
+                        {
+                            "Definition": "Register",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Reset Password",
+                    "Path": "/reset-password",
+                    "ViewRoles": [
+                        "All Users"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Layout": "AuthLayout",
+                    "Plugins": [
+                        {
+                            "Definition": "Reset Password",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Forgot Password",
+                    "Path": "/forgot-password",
+                    "ViewRoles": [
+                        "All Users"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Locked": true,
+                    "Layout": "AuthLayout",
+                    "Plugins": [
+                        {
+                            "Definition": "Forgot Password",
+                            "Section": "Main"
+                        }
+                    ]
+                },
+                {
+                    "Title": "Profile",
+                    "Path": "/profile",
+                    "ViewRoles": [
+                        "Authenticated Users"
+                    ],
+                    "Settings": {
+                        "Index": "false",
+                        "Follow": "false"
+                    },
+                    "Layout": "AdminLayout",
+                    "EditLayout": "AdminLayout",
+                    "Locked": true,
+                    "Plugins": [
+                        {
+                            "Definition": "Profile",
+                            "Section": "Main"
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+    "Blocks": [
+        {
+            "Name": "Default",
+            "Category": "Header",
+            "Description": "Default header section"
+        }
+    ],
+    "ContentTypes": [
+        {
+            "Title": "Jobs",
+            "Slug": "jobs",
+            "Description": "Jobs content type",
+            "Fields": [
+                {
+                    "Name": "Title",
+                    "Description": "Job title",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Title",
+                    "Settings": {
+                        "Placeholder": "Enter job title",
+                        "DataTableColumnOrder": 1,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 1,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "ContractType",
+                    "Description": "Job contract type",
+                    "Type": "single-select",
+                    "Required": true,
+                    "Label": "Contract Type",
+                    "Settings": {
+                        "Placeholder": "Choose contract type",
+                        "Options": "Full-time\nPart-time\nContract\nFreelance",
+                        "DataTableColumnOrder": 2,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "SelectFieldDataTableBadge",
+                        "FormViewOrder": 2,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "SelectFieldFormSelect"
+                    }
+                },
+                {
+                    "Name": "CompanyName",
+                    "Description": "Company name",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Company Name",
+                    "Settings": {
+                        "Placeholder": "Enter company name",
+                        "DataTableColumnOrder": 3,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 3,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "CompanyLogo",
+                    "Description": "Company logo",
+                    "Type": "single-file",
+                    "Required": true,
+                    "Label": "Company Logo",
+                    "Settings": {
+                        "Placeholder": "Upload company logo",
+                        "DataTableColumnOrder": 4,
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "SingleFileFieldDataTableFile",
+                        "FormViewOrder": 4,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "SingleFileFieldFormFilePicker"
+                    }
+                },
+                {
+                    "Name": "Salary",
+                    "Description": "Salary for the job position",
+                    "Type": "number",
+                    "Required": false,
+                    "Label": "Salary",
+                    "Settings": {
+                        "Placeholder": "Enter salary amount",
+                        "DataTableColumnOrder": 5,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "NumberFieldDataTableView",
+                        "FormViewOrder": 5,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "NumberFieldFormInput"
+                    }
+                },
+                {
+                    "Name": "Address",
+                    "Description": "Company address",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Address",
+                    "Settings": {
+                        "Placeholder": "Enter company address",
+                        "DataTableColumnOrder": 6,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 6,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "Tags",
+                    "Description": "Tags related to the job",
+                    "Type": "string",
+                    "Required": false,
+                    "Label": "Tags",
+                    "Settings": {
+                        "Placeholder": "Enter tags (comma separated)",
+                        "DataTableColumnOrder": 7,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 7,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "CompanyPhone",
+                    "Description": "Company phone number",
+                    "Type": "string",
+                    "Required": false,
+                    "Label": "Company Phone",
+                    "Settings": {
+                        "Placeholder": "Enter company phone number",
+                        "DataTableColumnOrder": 8,
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 8,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "CompanyEmail",
+                    "Description": "Company email address",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Company Email",
+                    "Settings": {
+                        "Placeholder": "Enter company email address",
+                        "DataTableColumnOrder": 9,
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 9,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "Description",
+                    "Description": "Job description",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Description",
+                    "Settings": {
+                        "Placeholder": "Enter job description",
+                        "DataTableColumnOrder": 10,
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 10,
+                        "FormColWidth": 12,
+                        "FormViewComponent": "StringFieldFormRichText"
+                    }
+                },
+                {
+                    "Name": "Category",
+                    "Description": "Job category",
+                    "Type": "single-select",
+                    "Required": true,
+                    "Label": "Category",
+                    "Settings": {
+                        "Placeholder": "Select job category",
+                        "Options": "Development\nMarketing\nDesign\nManagement\n",
+                        "DataTableColumnOrder": 11,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "SelectFieldDataTableBadge",
+                        "FormViewOrder": 11,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "SelectFieldFormSelect"
+                    }
+                },
+                {
+                    "Name": "Summary",
+                    "Description": "Job summary",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Summary",
+                    "Settings": {
+                        "Placeholder": "Enter job summary",
+                        "DataTableColumnOrder": 12,
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 12,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "PostedDate",
+                    "Description": "Date the job was posted",
+                    "Type": "datetime",
+                    "Required": true,
+                    "Label": "Posted Date",
+                    "Settings": {
+                        "Placeholder": "Select posted date",
+                        "DataTableColumnOrder": 13,
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "DateFieldDataTableView",
+                        "FormViewOrder": 13,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "DateFieldFormDate"
+                    }
+                },
+                {
+                    "Name": "MinExperience",
+                    "Description": "Minimum experience required",
+                    "Type": "string",
+                    "Required": true,
+                    "Label": "Minimum Experience",
+                    "Settings": {
+                        "Placeholder": "Enter minimum experience",
+                        "DataTableColumnOrder": 14,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 14,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "Gender",
+                    "Description": "Preferred gender for the job",
+                    "Type": "single-select",
+                    "Required": false,
+                    "Label": "Gender",
+                    "Settings": {
+                        "Placeholder": "Select preferred gender",
+                        "Options": "Male\nFemale\nAny",
+                        "DataTableColumnOrder": 15,
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "SelectFieldDataTableBadge",
+                        "FormViewOrder": 15,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "SelectFieldFormSelect"
+                    }
+                },
+                {
+                    "Name": "Level",
+                    "Description": "Job level",
+                    "Type": "single-select",
+                    "Required": true,
+                    "Label": "Level",
+                    "Settings": {
+                        "Placeholder": "Select job level",
+                        "Options": "Junior\nMid-level\nSenior",
+                        "DataTableColumnOrder": 16,
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "SelectFieldDataTableBadge",
+                        "FormViewOrder": 16,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "SelectFieldFormSelect"
+                    }
+                },
+                {
+                    "Name": "ApplicationEndDate",
+                    "Description": "Deadline for applications",
+                    "Type": "datetime",
+                    "Required": true,
+                    "Label": "Application End Date",
+                    "Settings": {
+                        "Placeholder": "Select application end date",
+                        "DataTableColumnOrder": 17,
+                        "DataTableVisible": false,
+                        "DataTableViewComponent": "DateFieldDataTableView",
+                        "FormViewOrder": 17,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "DateFieldFormDate"
+                    }
+                },
+                {
+                    "Name": "AppliedCount",
+                    "Description": "Number of applications received",
+                    "Type": "number",
+                    "Required": false,
+                    "Label": "Applied Count",
+                    "Settings": {
+                        "Placeholder": "Enter number of applications",
+                        "DataTableColumnOrder": 18,
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "NumberFieldDataTableView",
+                        "FormViewOrder": 18,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "NumberFieldFormInput"
+                    }
+                }
+            ],
+            "Contents": [
+                {
+                    "Title": "Senior Frontend Developer",
+                    "ContractType": "Full-Time",
+                    "CompanyName": "Tech Innovators Ltd.",
+                    "CompanyLogo": "/files/img/companies/1.webp",
+                    "Salary": 80000,
+                    "Address": "123 Silicon Valley, CA, USA",
+                    "Tags": "React,JavaScript,Tailwind CSS,Remote",
+                    "CompanyPhone": "+1-800-555-1234",
+                    "CompanyEmail": "hr@techinnovators.com",
+                    "Description": "<p>We are looking for a skilled Frontend Developer with expertise in React and Tailwind CSS. Join our team to build innovative products!</p>",
+                    "Category": "Development",
+                    "Summary": "Exciting opportunity for a Senior Frontend Developer specializing in React and Tailwind CSS.",
+                    "PostedDate": "2024-12-01",
+                    "MinExperience": "5 Years",
+                    "Gender": "Any",
+                    "Level": "Senior",
+                    "ApplicationEndDate": "2024-12-31",
+                    "AppliedCount": 50
+                },
+                {
+                    "Title": "Marketing Specialist",
+                    "ContractType": "Part-Time",
+                    "CompanyName": "Brand Builders Inc.",
+                    "CompanyLogo": "/files/img/companies/2.webp",
+                    "Salary": 40000,
+                    "Address": "456 Market Street, NY, USA",
+                    "Tags": "SEO,Content Marketing,Social Media",
+                    "CompanyPhone": "+1-800-555-5678",
+                    "CompanyEmail": "careers@brandbuilders.com",
+                    "Description": "<p>Join our team as a Marketing Specialist and help us create compelling campaigns that drive results.</p>",
+                    "Category": "Marketing",
+                    "Summary": "Part-time Marketing Specialist role focusing on SEO and content marketing.",
+                    "PostedDate": "2024-12-05",
+                    "MinExperience": "3 Years",
+                    "Gender": "Any",
+                    "Level": "Mid-level",
+                    "ApplicationEndDate": "2025-01-15",
+                    "AppliedCount": 30
+                },
+                {
+                    "Title": "Junior Graphic Designer",
+                    "ContractType": "Internship",
+                    "CompanyName": "Creative Minds Studio",
+                    "CompanyLogo": "/files/img/companies/3.webp",
+                    "Salary": 15000,
+                    "Address": "789 Art District, LA, USA",
+                    "Tags": "Photoshop,Illustrator,Creativity",
+                    "CompanyPhone": "+1-800-555-9101",
+                    "CompanyEmail": "design@creativeminds.com",
+                    "Description": "<p>Kickstart your career in graphic design with this exciting internship opportunity!</p>",
+                    "Category": "Design",
+                    "Summary": "Internship opportunity for aspiring graphic designers to gain hands-on experience.",
+                    "PostedDate": "2024-12-10",
+                    "MinExperience": "None",
+                    "Gender": "Any",
+                    "Level": "Junior",
+                    "ApplicationEndDate": "2025-02-01",
+                    "AppliedCount": 10
+                }
+            ]
+        },
+        {
+            "Slug": "categories",
+            "Title": "Categories",
+            "Description": "Categories content type",
+            "Fields": [
+                {
+                    "Name": "Name",
+                    "Type": "string",
+                    "Label": "Category Name",
+                    "Description": "name of the category",
+                    "Required": true,
+                    "Settings": {
+                        "Placeholder": "Enter category name",
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "StringFieldDataTableView",
+                        "FormViewOrder": 1,
+                        "TableViewOrder": 1,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "StringFieldFormText"
+                    }
+                },
+                {
+                    "Name": "Count",
+                    "Type": "number",
+                    "Label": "Posts Count",
+                    "Description": "number of posts in the category",
+                    "Required": true,
+                    "Settings": {
+                        "Placeholder": "Enter number of posts in this category",
+                        "DataTableVisible": true,
+                        "DataTableViewComponent": "NumberFieldDataTableView",
+                        "FormViewOrder": 2,
+                        "TableViewOrder": 2,
+                        "FormColWidth": 6,
+                        "FormViewComponent": "NumberFieldFormInput"
+                    }
+                }
+                
+            ],
+            "Contents": [
+                {
+                    "Name": "Accounting/Finance",
+                    "Count": 305
+                },
+                {
+                    "Name": "Production/Operation",
+                    "Count": 95
+                },
+                {
+                    "Name": "Education/Training",
+                    "Count": 212
+                },
+                {
+                    "Name": "Design/Creative",
+                    "Count": 93
+                },
+                {
+                    "Name": "Health & Fitness",
+                    "Count": 4
+                },
+                {
+                    "Name": "Research/Consultancy",
+                    "Count": 34
+                },
+                {
+                    "Name": "Engineer/Architects",
+                    "Count": 376
+                },
+                {
+                    "Name": "Telecommunication",
+                    "Count": 450
+                },
+                {
+                    "Name": "Data Entry/Operator",
+                    "Count": 25
+                },
+                {
+                    "Name": "Production/Operation",
+                    "Count": 95
+                },
+                {
+                    "Name": "Marketing/Sales",
+                    "Count": 666
+                },
+                {
+                    "Name": "Security/Support Service",
+                    "Count": 62
+                }
+            ]
+        }
+    ]
+}

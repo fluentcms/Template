@@ -1,0 +1,31 @@
+<!--== Start Job Category Area Wrapper ==-->
+<section class="job-category-area">
+  <div class="container" data-aos2="fade-down">
+    <div class="row">
+      <div class="col-12">
+        <div class="section-title text-center">
+          <h3 class="title">Popular Category</h3>
+          <div class="desc">
+            <p>Many desktop publishing packages and web page editors</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row row-gutter-20">
+      {{ for category in Items }}
+        <div class="col-sm-6 col-lg-3">
+          <div class="job-category-item">
+            <div class="content">
+              <h3 class="title">
+                <a href="/jobs/detail/TODO">
+                  {{ category.Name }} <span>({{ category.Count }})</span>
+                </a>
+              </h3>
+            </div>
+            <a class="overlay-link" href="/jobs/detail/TODO"></a>
+          </div>
+        </div>
+      {{ end }}
+    </div>
+  </div>
+</section>
