@@ -1,0 +1,142 @@
+
+  <!--== Start Job Details Area Wrapper ==-->
+  <section class="job-details-area">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="job-details-wrap">
+            <div class="job-details-info">
+              <div class="thumb">
+                <img src="/files/{{ Item.CompanyLogo }}" width="130" height="130" alt="Image-HasTech">
+              </div>
+              <div class="content">
+                <h4 class="title">{{ Item.Title }}</h4>
+                <h5 class="sub-title">{{ Item.CompanyName }}</h5>
+                <ul class="info-list">
+                  <li><i class="icofont-location-pin"></i> {{ Item.Address }}</li>
+                  <li><i class="icofont-phone"></i> {{ Item.Phone }}</li>
+                </ul>
+              </div>
+            </div>
+            <div class="job-details-price">
+              <h4 class="title">${{ Item.Salary }} <span>/monthly</span></h4>
+              <button type="button" class="btn-theme">Apply Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-lg-7 col-xl-8">
+          <div class="job-details-item">
+            <div class="content">
+              <h4 class="title">Description</h4>
+              <p class="desc">
+                {{ Item.Description }}
+              </p>
+            </div>
+            
+          </div>
+        </div>
+        <div class="col-lg-5 col-xl-4">
+          <div class="job-sidebar">
+            <div class="widget-item">
+              <div class="widget-title">
+                <h3 class="title">Summery</h3>
+              </div>
+              <div class="summery-info">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <td class="table-name">Job Type</td>
+                      <td class="dotted">:</td>
+                      <td data-text-color="#03a84e">{{ Item.ContractType }}</td>
+                    </tr>
+                    <tr>
+                      <td class="table-name">Category</td>
+                      <td class="dotted">:</td>
+                      <td>{{ Item.Category }}</td>
+                    </tr>
+                    <tr>
+                      <td class="table-name">Posted</td>
+                      <td class="dotted">:</td>
+                      <td>{{ Item.PostedDate }}</td>
+                    </tr>
+                    <tr>
+                      <td class="table-name">Category</td>
+                      <td class="dotted">:</td>
+                      <td>{{ Item.Category }}</td>
+                    </tr>
+                    <tr>
+                      <td class="table-name">Salary</td>
+                      <td class="dotted">:</td>
+                      <td>${{ Item.Salary }} / Monthly</td>
+                    </tr>
+                    <tr>
+                      <td class="table-name">Experience</td>
+                      <td class="dotted">:</td>
+                      <td>{{ Item.MinExperience }}</td>
+                    </tr>
+                    <tr>
+                      <td class="table-name">Gender</td>
+                      <td class="dotted">:</td>
+                      <td>{{ Item.Gender == "Any" ? "Male or Female" : Item.Gender }}</td>
+                    </tr>
+                    <tr>
+                      <td class="table-name">Level</td>
+                      <td class="dotted">:</td>
+                      <td>{{ Item.Level }}</td>
+                    </tr>
+                    <tr>
+                      <td class="table-name">Applied</td>
+                      <td class="dotted">:</td>
+                      <td>{{ Item.AppliedCount }}</td>
+                    </tr>
+                    <tr>
+                      <td class="table-name">Application End</td>
+                      <td class="dotted">:</td>
+                      <td data-text-color="#ff6000">{{ Item.ApplicationEndDate }}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="widget-item">
+              <div class="widget-title">
+                <h3 class="title">Share With</h3>
+              </div>
+              <div class="social-icons">
+                <a href="https://www.facebook.com" target="_blank" rel="noopener"><i class="icofont-facebook"></i></a>
+                <a href="https://twitter.com" target="_blank" rel="noopener"><i class="icofont-twitter"></i></a>
+                <a href="https://www.skype.com" target="_blank" rel="noopener"><i class="icofont-skype"></i></a>
+                <a href="https://www.pinterest.com" target="_blank" rel="noopener"><i class="icofont-pinterest"></i></a>
+                <a href="https://dribbble.com/" target="_blank" rel="noopener"><i class="icofont-dribbble"></i></a>
+              </div>
+            </div>
+            <div class="widget-item widget-tag">
+              <div class="widget-title">
+                <h3 class="title">Tags:</h3>
+              </div>
+              <div class="widget-tag-list">
+                {{ Item.Tags }}
+                <!-- <a href="/jobs">Cleaning</a>
+                <a href="/jobs">Cleaning Agency</a><br>
+                <a href="/jobs">Business</a>
+                <a href="/jobs">Cleaning</a>
+                <a href="/jobs">Business</a>
+                <a href="/jobs">Cleaning</a>
+                <a href="/jobs">Cleaning Agency</a>
+                <a href="/jobs">Business</a>
+                <a href="/jobs">Cleaning Agency</a>
+                <a href="/jobs">Cleaning</a>
+                <a href="/jobs">Business</a>
+                <a href="/jobs">Business</a>
+                <a href="/jobs">Cleaning Agency</a>
+                <a href="/jobs">Business</a> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--== End Job Details Area Wrapper ==-->

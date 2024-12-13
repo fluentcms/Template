@@ -1,0 +1,61 @@
+  <!--== Start Recent Job Area Wrapper ==-->
+  <section class="recent-job-area recent-job-inner-area">
+    <div class="container">
+      <div class="row">
+        {{ for job in Items }}
+            <div class="col-md-6 col-lg-4">
+                <!--== Start Recent Job Item ==-->
+                <div class="recent-job-item recent-job-style2-item">
+                <div class="company-info">
+                    <div class="logo">
+                        <a href="/company/{{ job.CompanyName }}"><img src="/files/{{ job.CompanyLogo }}" width="75" height="75" alt="Image-HasTech"></a>
+                    </div>
+                    <div class="content">
+                        <h4 class="name"><a href="/company/{{ job.CompanyLogo }}">{{ job.CompanyName }}</a></h4>
+                        <p class="address">{{ job.Address }}</p>
+                    </div>
+                </div>
+                <div class="main-content">
+                    <h3 class="title"><a href="/jobs/detail/{{ Job.Id }}">{{ job.Title }}</a></h3>
+                    <h5 class="work-type">{{ job.ContractType }}</h5>
+                    <p class="desc">{{ job.Tags }}</p>
+                </div>
+                <div class="recent-job-info">
+                    <div class="salary">
+                        <h4>${{ job.Salary }}</h4>
+                        <p>/monthly</p>
+                    </div>
+                    <a class="btn-theme btn-sm" href="/jobs/detail/{{ Job.Id }}">Apply Now</a>
+                </div>
+                </div>
+                <!--== End Recent Job Item ==-->
+            </div>
+        {{ end }}
+      </div>
+      <div class="row">
+        <div class="col-lg-12 text-center">
+          <div class="pagination-area">
+            <nav>
+              <ul class="page-numbers d-inline-flex">
+                <li>
+                  <a class="page-number active" href="/jobs">1</a>
+                </li>
+                <li>
+                  <a class="page-number" href="/jobs">2</a>
+                </li>
+                <li>
+                  <a class="page-number" href="/jobs">3</a>
+                </li>
+                <li>
+                  <a class="page-number next" href="/jobs">
+                    <i class="icofont-long-arrow-right"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!--== End Recent Job Area Wrapper ==-->
